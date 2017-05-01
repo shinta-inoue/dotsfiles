@@ -13,13 +13,14 @@ eval "$(rbenv init - zsh)"
 export CC=/usr/bin/gcc
 export PATH=/Applications/Vagrant/bin:$PATH
 export PATH=/Users/Tokoroten/.nodebrew/current//bin:$PATH
+export PATH=$PATH:/Users/01006489/Library/Android/sdk/platform-tools
 
 ########################################
 # alias
 ########################################
 alias ls='ls -GF'
 alias la='ls -a'
-alias ll='ls -l'
+alias ll='ls -arlt'
 alias zukan='ssh -t -f -N -L 13306:rds-zukan1.cx3oma2dboig.ap-northeast-1.rds.amazonaws.com:3306 zukan'
 alias tokoroten='ssh -i ec2tokoroten.pem ec2-user@54.148.56.227'
 

@@ -1,11 +1,12 @@
 "*":
-  "exception-reporting":
-    userId: "4d2131f1-70c6-a6d1-f2d4-7cfcdf1601d6"
-  welcome:
-    showOnStartup: false
+  "autocomplete-plus": {}
   core: {}
   editor:
+    fontSize: 16
     invisibles: {}
-  "autocomplete-plus": {}
+  "exception-reporting":
+    userId: "4d2131f1-70c6-a6d1-f2d4-7cfcdf1601d6"
   "save-session":
     dataSaveFolder: "/Users/Tokoroten/.atom/packages/save-session/projects"
+  welcome:
+    showOnStartup: false
