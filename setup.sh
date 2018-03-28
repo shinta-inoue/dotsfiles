@@ -22,6 +22,4 @@ do
   fi
 done
 
-source $HOME/.zshrc
-
 echo "Complete!"
