@@ -1,11 +1,27 @@
 #!/bin/bash
-DOT_FILES=(.zshrc .atom)
+set -eu
 
-mkdir $HOME/dotfiles.bk
+DOT_FILES=(.zshrc .atom)
+echo "Set up dotfiles -> ${DOT_FILES[@]}"
+
+backupDir=$HOME/dotfiles.bk
+if [ -e $backupDir ]; then
+  rm -rf $backupDir
+fi
+mkdir $backupDir
 
 for file in ${DOT_FILES[@]}
 do
-  mv $HOME/$file $HOME/dotfiles.bk/$file
-  ln -s $HOME/dotfiles/$file $HOME/$file
+  actualFile=$HOME/$file
+  if [ ! -L $actualFile ]; then
+    if [ -e $actualFile ]; then
+      echo "move ${actualFile} to backup dir"
+      mv $actualFile $backupDir/$file
+    fi
+    ln -s $HOME/dotfiles/$file $HOME/$file
+  fi
 done
 
+source $HOME/.zshrc
+
+echo "Complete!"

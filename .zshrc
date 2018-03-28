@@ -5,15 +5,19 @@
 ########################################
 # 環境変数
 export LANG=ja_JP.UTF-8
-export MAGICK_HOME=/usr/local/
-#export PATH=~/.rbenv/shims:$PATH 
-#eval "$(rbenv init -zsh)"
 export PATH=$HOME/.rbenv/bin:$PATH
+export PATH=/Applications/Vagrant/bin:$PATH
+export PATH=$HOME/.nodebrew/current//bin:$PATH
+export PATH=$HOME/Library/Android/sdk/platform-tools:$PATH
+export GOPATH=$HOME/go
+export PATH=$GOPATH/bin:$PATH
+export GO15VENDOREXPERIMENT=1
+export JAVA_HOME=`/usr/libexec/java_home -v 1.8` 
+export PATH=/usr/local/bin:$PATH
+
+# for ruby
 eval "$(rbenv init - zsh)"
 export CC=/usr/bin/gcc
-export PATH=/Applications/Vagrant/bin:$PATH
-export PATH=/Users/Tokoroten/.nodebrew/current//bin:$PATH
-export PATH=$PATH:/Users/01006489/Library/Android/sdk/platform-tools
 
 ########################################
 # alias
@@ -21,8 +25,6 @@ export PATH=$PATH:/Users/01006489/Library/Android/sdk/platform-tools
 alias ls='ls -GF'
 alias la='ls -a'
 alias ll='ls -arlt'
-alias zukan='ssh -t -f -N -L 13306:rds-zukan1.cx3oma2dboig.ap-northeast-1.rds.amazonaws.com:3306 zukan'
-alias tokoroten='ssh -i ec2tokoroten.pem ec2-user@54.148.56.227'
 
 ########################################
 # プロンプト
@@ -143,7 +145,10 @@ setopt auto_menu
  
 # 高機能なワイルドカード展開を使用する
 setopt extended_glob
- 
+
+# マッチしない場合でも実行可能に
+setopt nonomatch
+
 ########################################
 # キーバインド
  

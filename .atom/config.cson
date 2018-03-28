@@ -8,5 +8,7 @@
     userId: "4d2131f1-70c6-a6d1-f2d4-7cfcdf1601d6"
   "save-session":
     dataSaveFolder: "/Users/Tokoroten/.atom/packages/save-session/projects"
+  "tree-view":
+    hideVcsIgnoredFiles: true
   welcome:
     showOnStartup: false
