@@ -9,6 +9,7 @@ install_colorscheme() {
 }
 
 install_vundlevim() {
+  echo "TODO: install VundleVim"
 }
 
 install_colorscheme && install_vundlevim
