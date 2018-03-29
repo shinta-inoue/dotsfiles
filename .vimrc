@@ -23,8 +23,8 @@ set showcmd
 set number
 " 現在の行を強調表示
 set cursorline
-" 現在の列を強調表示（縦）
-"set cursorcolumn
+" ルーラーの表示
+set ruler
 " 行末の1文字先までカーソルを移動できるように
 set virtualedit=onemore
 " インデントはスマートインデント
@@ -37,20 +37,18 @@ set showmatch
 set laststatus=2
 " コマンドラインの補完
 set wildmode=list:longest
-" 折り返し時に表示行単位での移動できるようにする
-nnoremap j gj
-nnoremap k gk
 
 " Tab系
-" 不可視文字を可視化(タブが「▸-」と表示される)
-set list listchars=tab:\▸\-
+" 不可視文字を可視化
+set list listchars=tab:\▸\-,eol:↲
 " Tab文字を半角スペースにする
 set expandtab
 " 行頭以外のTab文字の表示幅（スペースいくつ分）
 set tabstop=2
 " 行頭でのTab文字の表示幅
 set shiftwidth=2
-
+" 開業時に前の行のインデントを継続する
+set autoindent
 
 " 検索系
 " 検索文字列が小文字の場合は大文字小文字を区別なく検索する
@@ -66,10 +64,21 @@ set hlsearch
 " ESC連打でハイライト解除
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
 
+" historyの保存数
+set history=1000
+
 " for golang
 set nocompatible              " be iMproved, required
-"filetype off                  " required
 
+" Key mapping
+" 折り返し時に表示行単位での移動できるようにする
+nnoremap j gj
+nnoremap k gk
+" NERDTreeToggleのalias
+nnoremap :tree :NERDTreeToggle
+
+
+" Plugins
 set rtp+=~/.vim/bundle/Vundle.vim/
 call vundle#begin()
 
@@ -77,7 +86,11 @@ Plugin 'VundleVim/Vundle.vim'
 
 " golangに関して以下2行を追記
 Plugin 'fatih/vim-go'
-Plugin 'nsf/gocode', {'rtp': 'vim/'}                                                                                                                                                                                                                                    
+Plugin 'nsf/gocode', {'rtp': 'vim/'}
+
+" フォルダ階層をツリー表示
+Plugin 'scrooloose/nerdtree'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
