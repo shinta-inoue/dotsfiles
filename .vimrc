@@ -1,3 +1,24 @@
+" 互換モードで起動しない
+set nocompatible
+
+" filetypeをオフに
+filetype off
+
+" Plugins
+set rtp+=~/.vim/bundle/Vundle.vim/
+call vundle#begin()
+
+Plugin 'VundleVim/Vundle.vim'
+" golang
+Plugin 'fatih/vim-go'
+Plugin 'nsf/gocode', {'rtp': 'vim/'}
+" フォルダ階層をツリー表示
+Plugin 'scrooloose/nerdtree'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
+
+call vundle#end()
+filetype plugin indent on
+
 " syntax
 syntax on
 " color scheme
@@ -67,9 +88,6 @@ nmap <Esc><Esc> :nohlsearch<CR><Esc>
 " historyの保存数
 set history=1000
 
-" for golang
-set nocompatible              " be iMproved, required
-
 " Key mapping
 " 折り返し時に表示行単位での移動できるようにする
 nnoremap j gj
@@ -77,20 +95,3 @@ nnoremap k gk
 " NERDTreeToggleのalias
 nnoremap :tree :NERDTreeToggle
 
-
-" Plugins
-set rtp+=~/.vim/bundle/Vundle.vim/
-call vundle#begin()
-
-Plugin 'VundleVim/Vundle.vim'
-
-" golangに関して以下2行を追記
-Plugin 'fatih/vim-go'
-Plugin 'nsf/gocode', {'rtp': 'vim/'}
-
-" フォルダ階層をツリー表示
-Plugin 'scrooloose/nerdtree'
-Plugin 'Xuyuanp/nerdtree-git-plugin'
-
-call vundle#end()            " required
-filetype plugin indent on    " required
