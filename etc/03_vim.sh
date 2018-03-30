@@ -9,7 +9,7 @@ install_colorscheme() {
 }
 
 install_vundlevim() {
-  echo "TODO: install VundleVim"
+  git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim 
 }
 
 install_colorscheme && install_vundlevim
