@@ -25,6 +25,7 @@ syntax on
 colorscheme molokai
 set t_Co=256
 
+set backspace=indent,eol,start
 " setting
 "文字コードをUFT-8に設定
 set fenc=utf-8
