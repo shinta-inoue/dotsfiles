@@ -89,6 +89,9 @@ nmap <Esc><Esc> :nohlsearch<CR><Esc>
 " historyの保存数
 set history=1000
 
+" Go lang用
+let g:go_version_warning = 0
+
 " Key mapping
 " 折り返し時に表示行単位での移動できるようにする
 nnoremap j gj

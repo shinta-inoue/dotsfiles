@@ -12,7 +12,6 @@ export PATH=$HOME/Library/Android/sdk/platform-tools:$PATH
 export GOPATH=$HOME/go
 export PATH=$GOPATH/bin:$PATH
 export GO15VENDOREXPERIMENT=1
-export JAVA_HOME=`/usr/libexec/java_home -v 1.8` 
 export PATH=/usr/local/bin:$PATH
 
 # for ruby
