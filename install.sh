@@ -3,8 +3,8 @@ set -eu
 
 DOTPATH=~/.dotfiles
 
-GITHUB_URL="https://github.com/banri-tokoroten/dotfiles.git"
-DOWNLOAD_URL="https://github.com/banri-tokoroten/dotfiles/archive/master.tar.gz"
+GITHUB_URL="git@github.com:shinta-inoue/dotsfiles.git"
+DOWNLOAD_URL="https://github.com/shinta-inoue/dotfiles/archive/master.tar.gz"
 
 exist_cmd() {
   which "$1" > /dev/null 2>&1
